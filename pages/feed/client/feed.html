@@ -1,0 +1,48 @@
+<template name="feed">
+  <div class="jumbotron">
+    <h1>feed <small>What's everyone saying.</small></h1>
+    <h4 class="text-danger">Let your friends and their friends know how are things.</h4>
+  </div>
+
+  <div class="input-group">
+    <input type="text" class="mentionIpt form-control" placeholder="Mention something cool...">
+    <span class="input-group-btn">
+      <button class="mentionBtn btn btn-danger" type="button">Put it up</button>
+    </span>
+  </div>
+
+  <hr>
+  {{#each mention in mentions}}
+    {{> feedMentions  m = mention}}
+  {{/each}}
+  <hr>
+
+</template>
+
+<template name="feedMentions">
+  <div>
+    <h5> {{m.owner}} <div class="pull-right"> {{m.createdAt}} </div> </h5>
+  </div>
+  <div class="lead">
+    {{m.text}}
+    <div class="pull-right">
+      {{m.mentions}} |
+
+      <!-- button + dropdown code -->
+      <div class="btn-group">
+        <button type="button" class="mentionPlusBtn btn btn-danger"><span class="glyphicon glyphicon-plus"></span></button>
+        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Report Post</a></li>
+          <li class="mentionDlt"><a href="#">Delete Mention</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Make it private</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</template>

@@ -1,0 +1,25 @@
+<template name="friends">
+
+  <div class="jumbotron">
+    <h1>friends</h1>
+    <!-- <h4> {{# of friends}} friends and counting...</h4> -->
+  </div>
+
+  {{#each u in users}}
+    {{#each f in u.friends}}
+
+    <!-- find way to make the friends appear in aphabetical order -->
+    <div class="row">
+      <div class="col-md-8">
+        <h4><a class="text-muted" href="#"> {{f}} </a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="cut btn btn-danger pull-right" type="button">Unfollow</button>
+      </div>
+    </div>
+    <br>
+
+    {{/each}}
+  {{/each}}
+
+</template>
