@@ -4,6 +4,7 @@ Meteor.startup (function () {
   Mentions.insert({owner:"TIm Hickey", text:"Let's create apps.", mentions: 1, mentionedBy:["Mercedes Hall"], createdAt: new Date().toDateString()});
   Mentions.insert({owner:"Mercedes Hall", text:"I'm ready!", mentions: 0, mentionedBy:[], createdAt: new Date().toDateString()});
 
+  Meteor.users.remove({});
   // Users.remove({});
   // Users.insert({
   //   firstName:"Vanio",

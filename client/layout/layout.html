@@ -3,29 +3,32 @@
 
     <h1 class="text-center text-danger">Mention</h1>
 
-    <!-- if logged in diplay this nav -->
+    {{#if currentUser}}
+    <!-- if logged in display this nav -->
     <ul class="nav nav-tabs nav-justified">
       <li><a class="text-muted" href="{{pathFor 'feed'}}">feed</a></li>
       <li><a class="text-muted" href="{{pathFor 'friends'}}">friends</a></li>
       <li><a class="text-muted" href="{{pathFor 'profile'}}">profile</a></li>
-      <li><a class="text-muted" href="{{pathFor 'login'}}">login</a></li>
-    </ul>
+      <li><a class="text-muted js-logout" href="#">logout</a></li>
 
-    <!-- else show the login in the nav [username + password] -->
-    <!-- <ul>
-      <li>
-        <input type="text" placeholder="username">
-      </li>
-      <li>
-        <input type="text" placeholder="username">
-      </li>
-      <li>
-        <button type"button">Login</button>
-      </li>
-    </ul> -->
+    </ul>
+    {{else}}
+    <!-- else diplay this nav -->
+    <ul class="nav nav-tabs">
+      <li class="pull-right"><a class="text-muted" href="{{pathFor 'signup'}}">sign up</a></li>
+    </ul>
+    {{/if}}
 
     <br>
     {{> yield}}
 
+  </div>
+
+  <hr>
+
+  <div>
+    <br>
+    <!-- <h5>Hello</h5> -->
+    <br>
   </div>
 </template>
