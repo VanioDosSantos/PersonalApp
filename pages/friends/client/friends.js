@@ -1,7 +1,7 @@
 Template.friends.helpers({
   users: function() {
     // create function to find current user's friends in alphabetical order
-    return Users.find({firstName: "Vanio"}, {friends: 1});
+    return Meteor.users.find({firstName: "Vanio"}, {friends: 1});
   },
   // let numOfFriends = Users.find({firstName:"Vanio"}, {friends: 1}).count();
 });

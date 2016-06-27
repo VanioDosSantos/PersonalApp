@@ -2,6 +2,18 @@ Template.feed.helpers({
   mentions: function() {
     return Mentions.find({}, {sort: {createdAt: -1}});
   },
+
+  mentionOwner: function(mentions) {
+    // console.dir(mentions)
+    var userX = mentions.createdBy;
+    // console.log(userX);
+    var userObj = Meteor.users.findOne({_id: userX});
+    // console.log(userObj)
+    // console.log(userObj.profile)
+    // console.log(userObj.profile.first)
+    // console.log()
+    return userObj.profile.first + " " + userObj.profile.last;
+  }
 });
 
 Template.feed.events({
@@ -18,30 +30,27 @@ Template.feed.events({
       text: textInput,
       mentions: 0,
       createdAt: new Date().toDateString(),
-      // createdBy: Meteor.userId(),
-      // mentionedBy: [],
+      createdBy: Meteor.userId(),
+      mentionedBy: []
     }
 
-    Mentions.insert(mentionObj);
+    Meteor.call("mentionServer", mentionObj);
   },
+
+
 });
 
 Template.feedMentions.events({
+  "click .mentionPlusBtn" : function(event) {
+    event.preventDefault();
+    // console.dir(Meteor.userId());
+    Meteor.call("mentionPlus", this.m._id);
+  },
+
   "click .mentionDlt" : function(event) {
     event.preventDefault();
 
-    alert("Implement login system to actually enable deletion."); // temporary line
-    // Mentions.remove(this.mention._id);
+    Meteor.call("dtlMention", this.m._id);
   },
-  "click .mentionPlusBtn" : function(event) {
-    event.preventDefault();
 
-    alert("Mentioned it! - You need help with it."); // temporary line
-    // Mentions.update(
-    //   { owner: this.mention.owner },
-    //   { $inc: { mentions: 1 }, *add user who liked this to mentionedBy property* }
-    // );
-
-    Mentions.update({firstName: "Vanio"}, {$inc: {mentions: 1}});
-  }
 });

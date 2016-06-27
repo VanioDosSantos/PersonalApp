@@ -4,15 +4,18 @@
     <h4 class="text-danger">Let your friends and their friends know how are things.</h4>
   </div>
 
-  <div class="input-group">
-    <input type="text" class="mentionIpt form-control" placeholder="Mention something cool...">
-    <span class="input-group-btn">
-      <button class="mentionBtn btn btn-danger" type="button">Put it up</button>
-    </span>
-  </div>
+  <form class="mentionForm">
+    <div class="input-group">
+      <input type="text" class="mentionIpt form-control" placeholder="Mention something cool...">
+      <span class="input-group-btn">
+        <button class="mentionBtn btn btn-danger" type="submit">Put it up</button>
+      </span>
+    </div>
+  </form>
 
   <hr>
   {{#each mention in mentions}}
+    <h5>{{mentionOwner mention}} <div class="pull-right"> {{mention.createdAt}} </div></h5>
     {{> feedMentions  m = mention}}
   {{/each}}
   <hr>
@@ -21,7 +24,6 @@
 
 <template name="feedMentions">
   <div>
-    <h5> {{m.owner}} <div class="pull-right"> {{m.createdAt}} </div> </h5>
     <!-- added example -->
     <!-- <a href="/profile/{{m._id}}">peek profile</a> -->
   </div>
