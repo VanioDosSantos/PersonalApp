@@ -16,13 +16,15 @@ Template.signup.events({
         first: f,
         last: l,
         friends: [],
-        mentions: 0
+        mentions: 0,
+        color: "bg-danger"
       },
       email: e,
       password: p
     }, function(error) {
       if(error) { // if registration fails
         console.log(error.reason); // console log reason
+        return;
       } else {
         Router.go('/feed'); // else go to feed page
       }

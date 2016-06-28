@@ -10,13 +10,13 @@ Template.profile.helpers({
   theColor: function() {
     const instance = Template.instance();
     return instance.state.get("color");
-
   },
 
-  theCounter: function() {
-    const instance = Template.instance();
-    return instance.state.get("counter");
-  },
+  userColor: function() {
+    const u = Meteor.users.findOne({_id: Meteor.userId()});
+    const c = u.profile.color;
+    return c;
+  }
 
 });
 
@@ -24,6 +24,8 @@ Template.profile.events({
   "change .js-color": function(event, instance) {
     // console.log($(".js-color").val());
     const newColor = $(".js-color").val();
+    // console.log(Meteor.userId());
+    Meteor.call("profileColor", newColor, Meteor.userId());
     return instance.state.set("color", newColor);
   },
 

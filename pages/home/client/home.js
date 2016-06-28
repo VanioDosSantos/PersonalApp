@@ -11,10 +11,13 @@ Template.home.events({
 
     Meteor.loginWithPassword(email, password, function (error) {
       if(error) {
+        event.preventDefault();
         console.log(error.reason);
+        return;
       } else {
         Router.go("/feed");
       }
     });
-  }
+  },
+  
 });

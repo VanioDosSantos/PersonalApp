@@ -1,0 +1,16 @@
+.css-selectCont {
+  position: relative;
+  float: right;
+  z-index: 1;
+}
+
+.css-select {
+  position: relative;
+  width: 200px;
+}
+
+.css-background {
+  position: relative;
+  height: 900px;
+  border-radius: 5px;
+}
