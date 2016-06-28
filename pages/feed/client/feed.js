@@ -1,3 +1,7 @@
+// subscriptions
+Meteor.subscribe("mentions");
+// end
+
 Template.feed.helpers({
   mentions: function() {
     return Mentions.find({}, {sort: {createdAt: -1}});
@@ -37,6 +41,7 @@ Template.feed.events({
     }
 
     Meteor.call("mentionServer", mentionObj);
+    $(".mentionIpt").val("");
   },
 
 
@@ -46,7 +51,7 @@ Template.feedMentions.events({
   "click .mentionPlusBtn" : function(event) {
     event.preventDefault();
     // const m = this.m._id();
-    
+
     Meteor.call("mentionPlus", this.m._id, Meteor.userId());
 
   },
