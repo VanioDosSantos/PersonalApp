@@ -10,6 +10,12 @@ Meteor.publish("settings",
   }
 )
 
+Meteor.publish("quiztwo",
+  function() {
+    return QuizTwo.find();
+  }
+)
+
 // Meteor.publish("name_of_collection", function() {
 //   if (this.userId) {
 //     return NameOfCollection.find({_id: });

@@ -6,6 +6,12 @@
     <h4 class="text-danger">Grab your friends and let's go!</h4>
   </div>
 
+  {{#if currentUser}}
+    <h2>Hey</h2>
+  {{else}}
+    <h2>You must login first.</h2>
+  {{/if}}
+
   <!-- login form -->
   <div class="pull-right">
     <h1>login</h1>

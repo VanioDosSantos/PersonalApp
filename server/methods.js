@@ -25,5 +25,9 @@ Meteor.methods({
     Settings.insert(settingObj);
   },
 
+  insertInfo: function(infoObj) {
+    QuizTwo.insert(infoObj, infoObj.owner = this.userId);
+  },
+
 
 })

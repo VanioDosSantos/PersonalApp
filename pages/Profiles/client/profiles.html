@@ -1,0 +1,22 @@
+<template name="profiles">
+
+  <div class="jumbotron">
+    <h1>Profiles<small> these are all the profiles </small></h1>
+  </div>
+
+  <hr>
+
+  <h4>Existing Profiles:</h4>
+  <ol>
+    {{#each uProfile in allProfiles}}
+
+      <li> {{uProfile.first}} {{uProfile.last}} </li>
+      <h5> {{uProfile.email}} </h5>
+      <br>
+
+    {{/each}}
+  </ol>
+
+  <hr>
+
+</template>

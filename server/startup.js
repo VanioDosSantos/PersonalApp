@@ -3,5 +3,7 @@ Meteor.startup (function () {
 
   Settings.remove({});
 
+  QuizTwo.remove({});
+
   // Meteor.users.remove({});
 })

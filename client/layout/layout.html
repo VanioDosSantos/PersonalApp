@@ -6,6 +6,9 @@
     {{#if currentUser}}
     <!-- if logged in display this nav -->
     <ul class="nav nav-tabs nav-justified">
+      <li><a class="text-success" href="{{pathFor 'profiles'}}"> Profiles </a></li>
+      <li><a class="text-success" href="{{pathFor 'myprofile'}}"> MyProfiles </a></li>
+
       <li><a class="text-muted" href="{{pathFor 'feed'}}">feed</a></li>
       <li><a class="text-muted" href="{{pathFor 'friends'}}">friends</a></li>
       <li><a class="text-muted" href="{{pathFor 'profile'}}">profile</a></li>
@@ -16,6 +19,9 @@
     {{else}}
     <!-- else diplay this nav -->
     <ul class="nav nav-tabs">
+      <li><a class="text-success" href="{{pathFor 'quizTwo'}}">Quiz 2</a></li>
+      <li><a class="text-success" href="#"> {{> loginButtons}} </a></li>
+
       <li class="pull-right"><a class="text-muted" href="{{pathFor 'signup'}}">sign up</a></li>
     </ul>
     {{/if}}
