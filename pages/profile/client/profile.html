@@ -1,8 +1,10 @@
 <template name="profile">
 
   <div class="jumbotron">
-    <h1>profile <small>get to know me</small></h1>
+    <h1>profile<small> {{intro.text}} </small></h1>
   </div>
+
+  <a class="text-muted" href="{{pathFor 'settings'}}">settings</a>
 
   <div class="css-selectCont">
     <select class="js-color css-select">
@@ -17,7 +19,9 @@
   <br><br>
 
   <div class="{{userColor}} css-background">
+    <br>
 
+    <h1 class="css-userName"> {{liveUser.profile.first}} {{liveUser.profile.last}} </h1>
 
   </div>
 

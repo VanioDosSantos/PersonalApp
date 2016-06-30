@@ -16,4 +16,14 @@ Meteor.methods({
     Meteor.users.update({_id: id}, {$set: {"profile.color": bckColor}});
   },
 
+  newIntro: function(profileIntro) {
+    Settings.remove({owner: this.userId});
+    Settings.insert(profileIntro, profileIntro.owner = this.userId);
+  },
+
+  createSetting: function(settingObj) {
+    Settings.insert(settingObj);
+  },
+
+
 })

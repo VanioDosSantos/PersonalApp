@@ -1,3 +1,7 @@
+// subscriptions
+Meteor.subscribe("settings");
+// end
+
 Template.profile.onCreated( function() {
   this.state = new ReactiveDict();
   this.state.setDefault({
@@ -16,6 +20,14 @@ Template.profile.helpers({
     const u = Meteor.users.findOne({_id: Meteor.userId()});
     const c = u.profile.color;
     return c;
+  },
+
+  intro: function() {
+    return Settings.findOne({owner: Meteor.userId()});
+  },
+
+  liveUser: function() {
+    return Meteor.users.findOne({_id: Meteor.userId()});
   }
 
 });
