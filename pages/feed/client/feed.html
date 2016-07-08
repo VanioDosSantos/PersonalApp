@@ -15,7 +15,7 @@
 
   <hr>
   {{#each mention in mentions}}
-    <h5><a class="css-btns" href="/userMentions/{{mention._id}}"> {{mentionOwner mention}} </a> <div class="pull-right"> {{mention.createdAt}} </div></h5>
+    <h5><a class="css-btns" href="/frienduser/{{mention.createdBy}}"> {{mentionOwner mention}} </a> <div class="pull-right"> {{mention.createdAt}} </div></h5>
     {{> feedMentions  m = mention}}
     <!-- {{> userMentions allMs = mention}} -->
   {{/each}}
@@ -52,8 +52,9 @@
   </div>
 </template>
 
-<template name="userMentions">
-  <h3>Welcome to this person's mentions page.</h3>
+<template name="frienduser">
+  <h3>Add this user as friend</h3>
+  <button class="js-addfriend btn btn-danger" type="button">Add friend</button>
 
   <!-- {{allMs.text}} -->
 

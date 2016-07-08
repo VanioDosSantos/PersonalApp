@@ -1,31 +1,46 @@
 <template name="profile">
 
-  <div class="jumbotron">
-    <h1>profile<small> {{intro.text}} </small></h1>
-  </div>
+    <div class="jumbotron">
+        <h1>profile<small> {{intro.text}} </small></h1>
+    </div>
 
-  <a class="text-muted" href="{{pathFor 'settings'}}">settings</a>
+    <div class="btn btn-default">
+      <a class="text-muted" href="{{pathFor 'settings'}}">settings</a>
+    </div>
 
-  <div class="css-selectCont">
-    <select class="js-color css-select">
-      <option value="bg-info">Mild Blue</option>
-      <option value="bg-warning">Warning Yellow</option>
-      <option value="bg-success">Success Green</option>
-      <option value="bg-primary">Primary Blue</option>
-      <option value="bg-danger">Danger Red</option>
-    </select>
-  </div>
+    <div class="css-selectCont">
+        <select class="js-color css-select">
+            <option value="bg-info">Mild Blue</option>
+            <option value="bg-warning">Warning Yellow</option>
+            <option value="bg-success">Success Green</option>
+            <option value="bg-primary">Primary Blue</option>
+            <option value="bg-danger">Danger Red</option>
+        </select>
+    </div>
 
-  <br><br>
-
-  <div class="{{userColor}} css-background">
+    <br>
     <br>
 
-    <h1 class="css-userName"> {{liveUser.profile.first}} {{liveUser.profile.last}} </h1>
+    <div class="{{userColor}} css-background">
+        <br>
+        <h1 class="css-userName"> {{liveUser.profile.first}} {{liveUser.profile.last}} </h1>
 
-  </div>
+        <div class="css-personal">
+            <h2>My mentions:</h2>
 
-  <!-- <button class="push">Push</button>
+            <div class="lead">
+                {{#each p in userMentions}}
+                <p class="css-mention-text"> {{p.text}} <span class="pull-right">| Likes: {{p.mentions}}</span></p>
+                <!-- <hr> -->
+                {{/each}}
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- <button class="push">Push</button>
   <canvas id="drawSpace" width="500" height="500"> ...</canvas> -->
 
 </template>

@@ -25,5 +25,7 @@ Meteor.methods({
     Settings.insert(settingObj);
   },
 
-
+  // addFriend: function() {
+  //   Meteor.users.update({_id: this.userId}, {$push: {profile: {friends: id}}});
+  // }
 })

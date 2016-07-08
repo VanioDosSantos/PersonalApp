@@ -30,6 +30,9 @@ Template.feed.events({
     if (textInput == "") {
       alert("Type something first.");
       return;
+    } else if (textInput.length > 60) {
+      alert("A mention should be short and sweet.");
+      return;
     }
 
     const mentionObj = {
@@ -58,7 +61,24 @@ Template.feedMentions.events({
 
   "click .mentionDlt" : function(event) {
     event.preventDefault();
-    Meteor.call("dtlMention", this.m._id);
+    // console.log(this.m.createdby);
+    // console.log(Meteor.userId());
+    if (this.m.createdBy === Meteor.userId()) {
+      Meteor.call("dtlMention", this.m._id);
+    } else {
+      alert("You do not own this mentions.");
+      return;
+    }
+
   },
 
 });
+
+// Template.frienduser.events({
+//   "click .js-addfriend": function() {
+//     event.preventDefault();
+//
+//     Meteor.call("addFriend");
+//     alert("Friend added.");
+//   }
+// });

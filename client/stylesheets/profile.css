@@ -11,11 +11,21 @@
 
 .css-background {
   position: relative;
-  height: 900px;
+  height: auto;
   border-radius: 5px;
+  padding-bottom: 50px;
 }
 
 .css-userName {
   position: relative;
   left: 50px;
+}
+.css-personal {
+  /*background-color: red;*/
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.css-mention-text {
+  font-size: 18px;
+  font-family: Arial;
 }

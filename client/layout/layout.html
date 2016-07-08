@@ -6,17 +6,17 @@
     {{#if currentUser}}
     <!-- if logged in display this nav -->
     <ul class="nav nav-tabs nav-justified">
-      <li><a class="text-muted" href="{{pathFor 'feed'}}">feed</a></li>
-      <li><a class="text-muted" href="{{pathFor 'friends'}}">friends</a></li>
-      <li><a class="text-muted" href="{{pathFor 'profile'}}">profile</a></li>
+      <li><a class="text-muted" href="{{pathFor 'feed'}}">Feed</a></li>
+      <li><a class="text-muted" href="{{pathFor 'friends'}}">Friends</a></li>
+      <li><a class="text-muted" href="{{pathFor 'profile'}}">Profile</a></li>
       <!-- <li><a class="text-muted" href="{{pathFor 'test'}}">test</a></li> -->
-      <li><a class="text-muted js-logout" href="#">logout</a></li>
+      <li><a class="text-muted js-logout" href="#">Logout</a></li>
 
     </ul>
     {{else}}
     <!-- else diplay this nav -->
     <ul class="nav nav-tabs">
-      <li class="pull-right"><a class="text-muted" href="{{pathFor 'signup'}}">sign up</a></li>
+      <li class="pull-right"><a class="text-muted" href="{{pathFor 'signup'}}">Sign Up</a></li>
     </ul>
     {{/if}}
 

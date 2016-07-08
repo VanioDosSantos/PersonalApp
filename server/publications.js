@@ -10,6 +10,12 @@ Meteor.publish("settings",
   }
 )
 
+Meteor.publish("personalMentions",
+  function() {
+    return Mentions.find({createdBy: this.userId});
+  }
+)
+
 // Meteor.publish("name_of_collection", function() {
 //   if (this.userId) {
 //     return NameOfCollection.find({_id: });

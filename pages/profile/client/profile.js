@@ -1,5 +1,6 @@
 // subscriptions
 Meteor.subscribe("settings");
+Meteor.subscribe("personalMentions");
 // end
 
 Template.profile.onCreated( function() {
@@ -28,7 +29,11 @@ Template.profile.helpers({
 
   liveUser: function() {
     return Meteor.users.findOne({_id: Meteor.userId()});
-  }
+  },
+
+  userMentions: function() {
+    return Mentions.find({createdBy: Meteor.userId()});
+  },
 
 });
 
