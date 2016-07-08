@@ -16,6 +16,12 @@ Meteor.publish("personalMentions",
   }
 )
 
+Meteor.publish("bios",
+  function() {
+    return Bios.find();
+  }
+)
+
 // Meteor.publish("name_of_collection", function() {
 //   if (this.userId) {
 //     return NameOfCollection.find({_id: });

@@ -3,5 +3,7 @@ Meteor.startup (function () {
 
   Settings.remove({});
 
+  Bios.remove({});
+
   // Meteor.users.remove({});
 })

@@ -1,0 +1,36 @@
+<template name="quizFour">
+
+    <div class="row">
+      <div class="left col-md-6">
+        <form class="css-left-form bg-success text-center text-muted">
+            <h2>Biography</h2>
+            <br>
+            <input class="js-bio-author form-control" type="text" name="name" value="" placeholder="Type your name here...">
+            <br>
+            <textarea class="js-bio-text form-control" name="name" rows="8" cols="40" placeholder="Write your biography here..."></textarea>
+            <br>
+            <input class="btn btn-success" type="submit" name="name" value="Add/Update">
+        </form>
+      </div>
+      <div class="right col-md-6 text-center text-muted">
+        {{#each bioInfo in allBios}}
+
+            <a href="/bio/{{bioInfo._id}}"> <p> {{bioInfo.author}} </p> </a>
+        {{/each}}
+      </div>
+    </div>
+
+
+</template>
+
+<template name="bio">
+  
+  <div class="jumbotron">
+    <h3>Bio text:</h3>
+    <h5> {{author}} </h5>
+    <p>
+      {{bio}}
+    </p>
+  </div>
+
+</template>

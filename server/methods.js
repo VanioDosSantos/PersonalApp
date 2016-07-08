@@ -27,5 +27,12 @@ Meteor.methods({
 
   // addFriend: function() {
   //   Meteor.users.update({_id: this.userId}, {$push: {profile: {friends: id}}});
-  // }
+  // },
+
+  addBiography: function(bio) {
+    Bios.remove({author_id: this.userId});
+    Bios.insert(bio, bio.author_id = this.userId);
+  }
+
+
 })

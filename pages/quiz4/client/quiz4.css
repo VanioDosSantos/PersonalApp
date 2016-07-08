@@ -1,0 +1,21 @@
+.css-left-form {
+  /*background-color: orange;*/
+  width: auto;
+  padding: 20px;
+  border-radius: 5px;
+
+}
+.right {
+  /*background-color: green;*/
+  width: auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+a {
+  text-decoration: none;
+  color: green;
+}
+a:hover {
+  text-decoration: none;
+  color: #252525;
+}
