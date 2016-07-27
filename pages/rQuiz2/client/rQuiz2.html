@@ -1,0 +1,69 @@
+<template name="rQuiz2">
+
+  <h2 style="text-align: center;">First Makeup</h2>
+  <div class="jumbotron">
+
+    <h1>Political Donantions</h1>
+    <p>Report your political donations</p>
+  </div>
+
+  <select class="to">
+    <option>Hilary</option>
+    <option>Donald</option>
+  </select>
+  <br>
+  Your name: <input class="donor" type="text">
+  <br>
+  Amount: <input class="amount" type="number">
+  <br>
+  <input type="button" class="donate" value="Report Donation">
+
+  <h2>Donations</h2>
+
+  Sort by:
+  <select class="sort">
+    <option>when</option>
+    <option>amount</option>
+  </select>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Donor</th>
+        <th>For Whom</th>
+        <th>When</th>
+        <th>Amount</th>
+        <th>Delete?</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {{#if donations}}
+        {{#each donations}}
+          {{> eachDonation}}
+        {{/each}}
+      {{else}}
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      {{/if}}
+
+    </tbody>
+  </table>
+
+  <br><br><br>
+
+</template>
+
+<template name="eachDonation">
+  <tr>
+    <td> {{donor}} </td>
+    <td> {{to}} </td>
+    <td> {{when}} </td>
+    <td> {{amount}} </td>
+    <td> <a class="delete" href="#"><span class="glyphicon glyphicon-remove"></span></a> </td>
+  </tr>
+</template>

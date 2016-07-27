@@ -25,5 +25,13 @@ Meteor.methods({
     Settings.insert(settingObj);
   },
 
+  addDonation: function(obj) {
+    Donations.insert(obj);
+  },
+
+  deleteDonation: function(id) {
+    Donations.remove({_id: id});
+  },
+
 
 })

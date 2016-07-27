@@ -10,6 +10,12 @@ Meteor.publish("settings",
   }
 )
 
+Meteor.publish("theDonations",
+  function() {
+    return Donations.find();
+  }
+)
+
 // Meteor.publish("name_of_collection", function() {
 //   if (this.userId) {
 //     return NameOfCollection.find({_id: });

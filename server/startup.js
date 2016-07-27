@@ -1,7 +1,10 @@
 Meteor.startup (function () {
-  Mentions.remove({});
+  // Mentions.remove({});
 
-  Settings.remove({});
+  // Settings.remove({});
+  // Donations.remove({});
+
+
 
   // Meteor.users.remove({});
 })
