@@ -32,6 +32,9 @@ Meteor.methods({
   deleteDonation: function(id) {
     Donations.remove({_id: id});
   },
+  review: function(obj) {
+    Reviews.insert(obj);
+  }
 
 
 })

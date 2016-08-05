@@ -16,6 +16,12 @@ Meteor.publish("theDonations",
   }
 )
 
+Meteor.publish("theReviews",
+  function() {
+    return Reviews.find();
+  }
+)
+
 // Meteor.publish("name_of_collection", function() {
 //   if (this.userId) {
 //     return NameOfCollection.find({_id: });

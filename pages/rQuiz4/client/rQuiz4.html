@@ -1,0 +1,56 @@
+<template name="rQuiz4">
+
+  <h2 style="text-align: center;">Second Makeup</h2>
+
+  <h2>Provide Feedback</h2>
+
+  Team being reviewed:
+  <select class="team">
+    <option>All</option>
+    <option>PlanDeis</option>
+    <option>VirtualPet</option>
+    <option>Epoch</option>
+    <option>ChefsAssistant</option>
+    <option>TalkBoard</option>
+    <option>TraWorld</option>
+  </select>
+  <br>
+  Name of reviewer: <input class="reviewer" type="text" value="">
+  <br>
+  Rating (1=lo, 5=hi):
+  <select class="rating">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
+  <br>
+  Give some feedback here:
+  <br>
+  <textarea class="feedback" rows="8" cols="40"></textarea>
+  <br>
+  <input class="submit-review" type="button" value="Submit Feedback">
+
+  <h2>Feedback</h2>
+  <ul>
+    {{#each review}}
+
+      <a href="/review/{{_id}}"><li>{{reviewer}} {{team}} {{time}}</li></a>
+
+    {{/each}}
+  </ul>
+
+</template>
+
+<template name="review">
+
+  <h2>{{reviewer}} gave rating {{rating}} to {{team}}</h2>
+  <hr>
+  <div class="bg-info">
+    and left this comment
+    <p> {{feedback}} </p>
+
+  </div>
+
+</template>
